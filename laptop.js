@@ -1,9 +1,9 @@
-var Backpack = ""
+var Laptop = ""
 var Status = ""
 var Objects = []
 
 function preload() {
-    Backpack = loadImage("Backpack.jpeg")
+    Laptop = loadImage("Laptop.jpeg")
 }
 
 function setup() {
@@ -14,7 +14,7 @@ function setup() {
 }
 
 function draw() {
-    image(Backpack, 0, 0, 500, 375)
+    image(Laptop, 0, 0, 500, 375)
     if (Status != "") {
         for (let i = 0; i < Objects.length; i++) {
             document.getElementById("Status").innerHTML = "Status: Objects Detected"
@@ -31,7 +31,7 @@ function draw() {
 function ModelLoaded() {
     console.log("Model Loaded!")
     Status = true
-    ObjectDetector.detect(Backpack, GetResults)
+    ObjectDetector.detect(Laptop, GetResults)
 }
 
 function GetResults(Error, Results) {
